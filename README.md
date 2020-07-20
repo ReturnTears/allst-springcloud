@@ -23,4 +23,9 @@ Springboot 、 SpringCloud全家桶
 3、Settings > Build Execution Deployment > Compiler > A/B/C/D开头的选项都需要勾选上
 4、 Ctrl + Shift + alt + / > Registry > compiler.automake.allow.when.app.running 勾选上、actionSystem.assertFocusAccessFromEdt勾选上
 5、重启IDEA（2020+版本忽略此步骤也可以）
+
+RestTemplate提供了多种边界访问远程Http服务的方法，是一种简单便捷的访问restful服务模板类，是Spring提供的用于访问Rest服务的客户端模板工具集
+JdbcTemplate
+RedisTemplate
+
 ```
