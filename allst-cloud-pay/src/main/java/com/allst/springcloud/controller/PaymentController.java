@@ -35,6 +35,7 @@ public class PaymentController {
     public CommonResult getPaymentById(@PathVariable("id") Integer id) {
         Payment payment = paymentService.getPaymentById(id);
         if (payment != null) {
+            System.out.println(id + " : 查询成功");
             return new CommonResult(200, "查询成功.", payment);
         } else {
             return new CommonResult(444, "查询失败.无对应记录,id:" + id);

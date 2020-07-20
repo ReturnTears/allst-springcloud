@@ -44,5 +44,12 @@
             <artifactId>lombok</artifactId>
             <version>1.18.12</version>
         </dependency>
+<!--        devtools-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 </project>
