@@ -5,10 +5,7 @@ import com.allst.springcloud.entities.Payment;
 import com.allst.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author YiYa
@@ -20,8 +17,13 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
+    /**
+     * 注意细节：其他服务调用本服务create方法时，需要添加注解@RequestBody,否则添加不上数据
+     * @param payment 参数
+     * @return 结构
+     */
     @PostMapping("/payment/create")
-    public CommonResult create(Payment payment) {
+    public CommonResult create(@RequestBody Payment payment) {
         int result = paymentService.create(payment);
         System.out.println("-----------插入成功---------, 返回值: " + result);
         if (result > 0) {
@@ -31,6 +33,11 @@ public class PaymentController {
         }
     }
 
+    /**
+     * 通过id查询数据
+     * @param id 参数
+     * @return 结构
+     */
     @GetMapping(value = "/payment/get/{id}")
     public CommonResult getPaymentById(@PathVariable("id") Integer id) {
         Payment payment = paymentService.getPaymentById(id);

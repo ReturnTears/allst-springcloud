@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/allst-cloud-pay/pom.xml" />
         <option value="$PROJECT_DIR$/allst-cloud-order/pom.xml" />
+        <option value="$PROJECT_DIR$/allst-cloud-common/pom.xml" />
       </list>
     </option>
   </component>

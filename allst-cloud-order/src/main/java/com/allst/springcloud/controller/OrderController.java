@@ -25,11 +25,21 @@ public class OrderController {
     @Resource
     private RestTemplate restTemplate;
 
-    @GetMapping("/consumer/payment/create")
+    /**
+     * create
+     * @param payment 参数
+     * @return 结果
+     */
+    @GetMapping(value = "/consumer/payment/create")
     public CommonResult<Payment> create(Payment payment) {
         return restTemplate.postForObject(PAYMENT_URL + "/payment/create", payment, CommonResult.class);
     }
 
+    /**
+     * 获取数据
+     * @param id 参数
+     * @return 结果
+     */
     @GetMapping("/consumer/payment/get/{id}")
     public CommonResult getPayment(@PathVariable("id") Integer id) {
         return restTemplate.getForObject(PAYMENT_URL + "/payment/get/" + id, CommonResult.class);

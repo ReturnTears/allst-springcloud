@@ -37,6 +37,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
+        <!-- 引入自己定义的common通用包，可以使用Payment支付entity -->
+        <dependency>
+            <groupId>com.allst.cloud</groupId>
+            <artifactId>allst-cloud-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
 </project>
