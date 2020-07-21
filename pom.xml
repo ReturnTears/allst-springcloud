@@ -11,6 +11,7 @@
     <module>allst-cloud-pay</module>
     <module>allst-cloud-order</module>
     <module>allst-cloud-common</module>
+    <module>allst-cloud-eureka</module>
   </modules>
   <packaging>pom</packaging>
 
