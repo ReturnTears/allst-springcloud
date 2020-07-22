@@ -21,3 +21,6 @@ eureka:
     service-url:
       #defaultZone: http://localhost:7001/eureka
       defaultZone: http://eurekamaster:7001/eureka,http://eurekaslave2:7002/eureka  # eureka集群
+  instance:
+    instance-id: pay8001  # 主机名称的修改
+    prefer-ip-address: true # 访问路径可以显示IP地址
