@@ -12,6 +12,7 @@
     <module>allst-cloud-order</module>
     <module>allst-cloud-common</module>
     <module>allst-cloud-eureka</module>
+    <module>allst-cloud-eureka2</module>
   </modules>
   <packaging>pom</packaging>
 
