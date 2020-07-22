@@ -46,4 +46,7 @@ Eureka包含两个组件: Eureka Server和Eureka Client
 Eureka集群
 eureka与eureka2相互注册
 
+服务发现Discovery
+@EnableDiscoveryClient
+
 ```

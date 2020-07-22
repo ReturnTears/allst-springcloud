@@ -6,7 +6,11 @@ import com.allst.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author YiYa
@@ -20,6 +24,9 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String serverPort;
+
+    @Autowired
+    private DiscoveryClient discoveryClient;
     /**
      * 注意细节：其他服务调用本服务create方法时，需要添加注解@RequestBody,否则添加不上数据
      * @param payment 参数
@@ -50,5 +57,20 @@ public class PaymentController {
         } else {
             return new CommonResult(444, "查询失败.无对应记录,id:" + id + ",serverPort." + serverPort);
         }
+    }
+
+    /**
+     * 服务发现自测
+     * @return 结果
+     */
+    @GetMapping(value = "/payment/discovery")
+    public Object discovery() {
+        List<String> services = discoveryClient.getServices();
+        services.forEach(System.out::println);
+
+        List<ServiceInstance> instances = discoveryClient.getInstances("cloud-pay-service");
+        instances.forEach(i -> System.out.println(i.getHost() + " - " + i.getPort() + " - " + i.getUri()));
+
+        return discoveryClient;
     }
 }
