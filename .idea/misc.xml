@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/allst-cloud-common/pom.xml" />
         <option value="$PROJECT_DIR$/allst-cloud-eureka/pom.xml" />
         <option value="$PROJECT_DIR$/allst-cloud-eureka2/pom.xml" />
+        <option value="$PROJECT_DIR$/allst-cloud-pay2/pom.xml" />
       </list>
     </option>
   </component>

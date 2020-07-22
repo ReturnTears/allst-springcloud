@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="allst-cloud-common" />
         <module name="allst-cloud-eureka" />
         <module name="allst-cloud-order" />
         <module name="allst-cloud-pay" />
         <module name="allst-cloud-eureka2" />
-        <module name="allst-cloud-common" />
+        <module name="allst-cloud-pay2" />
       </profile>
     </annotationProcessing>
   </component>

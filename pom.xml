@@ -13,6 +13,7 @@
     <module>allst-cloud-common</module>
     <module>allst-cloud-eureka</module>
     <module>allst-cloud-eureka2</module>
+    <module>allst-cloud-pay2</module>
   </modules>
   <packaging>pom</packaging>
 

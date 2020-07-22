@@ -30,9 +30,9 @@ public class PaymentController {
         int result = paymentService.create(payment);
         System.out.println("-----------插入成功---------, 返回值: " + result);
         if (result > 0) {
-            return new CommonResult(200, "插入数据库成功.serverPort" + serverPort, result);
+            return new CommonResult(200, "插入数据库成功.serverPort:" + serverPort, result);
         } else {
-            return new CommonResult(444, "插入数据库失败.serverPort" + serverPort);
+            return new CommonResult(444, "插入数据库失败.serverPort:" + serverPort);
         }
     }
 
@@ -46,9 +46,9 @@ public class PaymentController {
         Payment payment = paymentService.getPaymentById(id);
         if (payment != null) {
             System.out.println(id + " : 查询成功");
-            return new CommonResult(200, "查询成功.serverPort" + serverPort, payment);
+            return new CommonResult(200, "查询成功.serverPort:" + serverPort, payment);
         } else {
-            return new CommonResult(444, "查询失败.无对应记录,id:" + id + ",serverPort." + serverPort);
+            return new CommonResult(444, "查询失败.无对应记录,id:" + id + ", serverPort:" + serverPort);
         }
     }
 }
