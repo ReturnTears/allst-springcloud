@@ -9,3 +9,6 @@ eureka:
     service-url:  # 设置与eureka server交互的地址查询服务和注册服务都需要依赖这个地址
       #defaultZone: http://${eureka.instance.appname}:${server.port}/eureka/
       defaultZone: http://eurekaslave1:7002/eureka/
+  server:
+    enable-self-preservation: true # 默认是true,表示打开， false表示关闭
+    eviction-interval-timer-in-ms: 10000  # unit s

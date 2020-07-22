@@ -49,4 +49,16 @@ eureka与eureka2相互注册
 服务发现Discovery
 @EnableDiscoveryClient
 
+Eureka的保护机制
+保护模式主要用于一组客户端和Eureka Server之间存在网络分区场景下的保护，一旦进入保护模式，Eureka Server将尝试保护其服务注册表中的信息，
+不在删除注册表中的数据，也就是不会注销任何微服务。
+为什么会产生Eureka自我保护机制？
+为了防止EurekaClient可以正常运行，但是与EurekaServer网络不通的情况下，EurekaServer不会立刻将EurekaServer服务剔除。
+什么是自我保护机制？
+默认情况下，如果EurekaServer在一定时间内没有接收到某个服务的心跳，EurekaServer将会注销该实例(默认90S)
+
+自我保护机制是一种应对网络故障的措施。
+
+怎么禁止自我保护？
+
 ```

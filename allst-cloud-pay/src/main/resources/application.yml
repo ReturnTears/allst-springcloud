@@ -24,3 +24,5 @@ eureka:
   instance:
     instance-id: pay8001  # 主机名称的修改
     prefer-ip-address: true # 访问路径可以显示IP地址
+    lease-renewal-interval-in-seconds: 30 # unit s 表示Eureka客户端向服务端发送心跳的时间间隔
+    lease-expiration-duration-in-seconds: 90  # unit s 表示Eureka服务端在收到最后一次心跳等待时间上限
