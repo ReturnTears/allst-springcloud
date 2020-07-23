@@ -62,3 +62,10 @@ Eureka的保护机制
 怎么禁止自我保护？
 
 ```
+
+## zookeeper
+```text
+Zookeeper服务注册与发现
+环境介绍：Zookeeper作为虚拟机上运行的集群服务，服务提供者和服务消费者都为Windows10下的本地Maven程序运行的服务。
+查看Zookeeper版本: echo stat|nc localhost 2181
+```

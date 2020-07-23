@@ -14,6 +14,7 @@
     <module>allst-cloud-eureka</module>
     <module>allst-cloud-eureka2</module>
     <module>allst-cloud-pay2</module>
+      <module>allst-cloud-zookeeper</module>
   </modules>
   <packaging>pom</packaging>
 
