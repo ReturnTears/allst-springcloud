@@ -13,6 +13,7 @@
         <module name="allst-cloud-zookeeper" />
         <module name="allst-cloud-pay" />
         <module name="allst-cloud-eureka2" />
+        <module name="allst-cloud-zkOrder" />
         <module name="allst-cloud-pay2" />
       </profile>
     </annotationProcessing>

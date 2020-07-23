@@ -10,6 +10,16 @@ https://blog.csdn.net/sinat_33957978/article/details/107453167
 Springboot 、 SpringCloud全家桶
 ```
 
+## 项目层级及模块介绍
+```text
+common公共模块
+eureka、eureka2是eureka服务注册与发现集群
+pay、pay2是服务提供者，都注册进了eureka集群
+order是消费者、注册进了eureka集群
+zookeeper是zookeeper集群客户端，注册进了zookeeper集群
+zkOrder是消费者、注册进了zookeeper集群
+```
+
 ## 流程
 ```text
 约定 > 配置 > 编码
