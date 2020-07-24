@@ -106,5 +106,16 @@ https://learn.hashicorp.com/consul/getting-started/install.html
 查看版本：consul --version
 查看web界面：localhost:8500
 
+```
 
+## 三注册中心的异同点
+```text
+组件名       语言      CAP     服务健康检查      对外暴露接口      SpringCloud集成   
+Eureka      Java      AP      可配支持          Http            已集成
+Consul      Go        CP      支持             Http/DNS         已集成
+Zookeeper   Java      CP      支持             客户端            已集成
+Consistency 强一致性
+Availability 可用性
+Partition tolerance 分区容错性
+一个系统只能保证CAP的两者
 ```
