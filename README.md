@@ -35,6 +35,9 @@ zkOrder是消费者、注册进了zookeeper集群
 5、重启IDEA（2020+版本忽略此步骤也可以）
 
 RestTemplate提供了多种边界访问远程Http服务的方法，是一种简单便捷的访问restful服务模板类，是Spring提供的用于访问Rest服务的客户端模板工具集
+restTemplate.getForObject:返回对象为响应体中数据转化成的对象，基本上可以理解为JSON
+restTemplate.getForEntity返回对象为ResponseEntity对象，包含了响应中的一些重要信息，比如响应头、响应状态码和响应体
+
 JdbcTemplate
 RedisTemplate
 
