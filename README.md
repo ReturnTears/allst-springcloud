@@ -81,7 +81,7 @@ Zookeeper服务注册与发现
 zookeeper注册的服务节点是临时的
 ```
 
-## consul
+## consul服务注册与发现
 ```text
 is what?
 Consul:是一套开源的分布式服务发现和配置管理系统，由HashiCrop公司采用go语言开发
@@ -120,7 +120,24 @@ Partition tolerance 分区容错性
 一个系统只能保证CAP的两者
 ```
 
-## Ribbon
+## Ribbon负载均衡服务调用
 ```text
+is what ?
+Spring Cloud Ribbon是基于Netflix实现的一套客户端 负载均衡的工具
+简单的说：Ribbon是Netflix发布的开源项目，主要功能是提供客户端的软件负载均衡算法和服务调用。
+Ribbon客户端提供了一系列完善的配置，如连接超时、重试、。
+简单说就是在配置文件中列出Load Balance后面所有的机器，Ribbon会自动的帮你基于某种规则(轮询、随机)
+去连接这些机器。我们就很容易实现自定义的负载均衡算法
+
+LB is what ?
+简单说就是将用户的请求平摊的分配到多个服务上，从而达到系统的HA
+常见负载均衡有：Nginx、LVS、硬件F5
+Ribbon本地负载均衡客户端 VS Nginx服务端负载均衡
+Nginx是服务器负载均衡，客户端所有请求都会交给Nginx,然后由nginx实现请求转发，即负载均衡由服务端实现。
+Ribbon是本地负载均衡、再调用微服务接口时候，会在注册中心上获取注册信息服务列表之后缓存到本地JVM，从而在本地实现RPC远程服务调用技术。
+Nigix是集中式LB
+Ribbon是进程内LB
+
+Ribbon ≈ 负载句话 + restTemplate调用
 
 ```
