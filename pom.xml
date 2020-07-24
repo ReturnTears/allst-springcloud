@@ -16,7 +16,8 @@
     <module>allst-cloud-pay2</module>
     <module>allst-cloud-zookeeper</module>
     <module>allst-cloud-zkOrder</module>
-      <module>allst-cloud-consul</module>
+    <module>allst-cloud-consul</module>
+    <module>allst-cloud-consulcstm</module>
   </modules>
   <packaging>pom</packaging>
 
