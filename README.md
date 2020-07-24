@@ -119,3 +119,8 @@ Availability 可用性
 Partition tolerance 分区容错性
 一个系统只能保证CAP的两者
 ```
+
+## Ribbon
+```text
+
+```
