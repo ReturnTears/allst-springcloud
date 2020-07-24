@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/allst-cloud-pay2/pom.xml" />
         <option value="$PROJECT_DIR$/allst-cloud-zookeeper/pom.xml" />
         <option value="$PROJECT_DIR$/allst-cloud-zkOrder/pom.xml" />
+        <option value="$PROJECT_DIR$/allst-cloud-consul/pom.xml" />
       </list>
     </option>
   </component>

@@ -98,4 +98,13 @@ download where?
 hao to play?
 中文翻译：springcloud.cc/spring-cloud-consul.html
 
+官网安装说明：
+https://learn.hashicorp.com/consul/getting-started/install.html
+下载完成后只有一个consul.exe文件
+安装：consul.exe
+运行：consul agent -dev
+查看版本：consul --version
+查看web界面：localhost:8500
+
+
 ```

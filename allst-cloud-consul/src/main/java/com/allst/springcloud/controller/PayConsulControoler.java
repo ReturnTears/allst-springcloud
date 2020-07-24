@@ -8,17 +8,15 @@ import java.util.UUID;
 
 /**
  * @author YiYa
- * @since 2020-07-23 下午 10:14
+ * @since 2020-07-24 下午 11:05
  */
 @RestController
-public class ZookeeperController {
-
+public class PayConsulControoler {
     @Value("${server.port}")
-    private String servePort;
+    private String serverPort;
 
-    @GetMapping(value = "payment/zk")
+    @GetMapping(value = "payment/consul")
     public String paymentZookeeper() {
-        return "SpringCloud With Zookeeper : " + servePort + " - " + UUID.randomUUID().toString();
+        return "SpringCloud With Zookeeper : " + serverPort + " - " + UUID.randomUUID().toString();
     }
-
 }
