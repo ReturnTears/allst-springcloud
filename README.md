@@ -80,3 +80,22 @@ Zookeeper服务注册与发现
 查看Zookeeper版本: echo stat|nc localhost 2181
 zookeeper注册的服务节点是临时的
 ```
+
+## consul
+```text
+is what?
+Consul:是一套开源的分布式服务发现和配置管理系统，由HashiCrop公司采用go语言开发
+提供了微服务系统中的服务治理、配置中心、控制总线等功能。这些功能中的每一个都可以根据需要单独使用。
+也可以一起使用以构建全方位的服务网格，consul提供了整套网格服务。
+do what?
+服务发现：提供http和DNS两种发现方式。
+健康健康：支持多种方式，Http、TCP、Docker、Shell脚本定制化
+KV存储：K-V键值对方式存储
+多数据中心：支持多数据中心
+可视化Web界面
+download where?
+地址：consul.io/downloads.html
+hao to play?
+中文翻译：springcloud.cc/spring-cloud-consul.html
+
+```
