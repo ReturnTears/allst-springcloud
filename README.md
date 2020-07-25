@@ -141,6 +141,17 @@ Ribbon是本地负载均衡、再调用微服务接口时候，会在注册中�
 Nigix是集中式LB
 Ribbon是进程内LB
 
-Ribbon ≈ 负载句话 + restTemplate调用
+Ribbon ≈ 负载均衡 + restTemplate调用
+
+Ribbon核心组件IRule: 根据特定算法从服务列表中选取一个要访问的服务。
+    IRule自带了：轮询、随机...7种算法
+
+如何替换：
+    自定义配置类不能放在@ComponentScan所扫描的当前包以及子包下，否则自定义的这个配置类就会被所有的Ribbon客户端所共享，达不到特殊定制化的目的。
+    自定义规则包：com.allst.irule
+
+
+
+
 
 ```
