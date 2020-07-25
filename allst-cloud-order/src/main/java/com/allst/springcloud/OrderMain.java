@@ -13,7 +13,7 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
-@RibbonClient(name = "cloud-pay-service", configuration = MySelfIRule.class)
+//@RibbonClient(name = "cloud-pay-service", configuration = MySelfIRule.class)// 使用自定义的配置类修改默认的轮询算法
 public class OrderMain {
     public static void main(String[] args) {
         SpringApplication.run(OrderMain.class, args);

@@ -2,9 +2,12 @@ package com.allst.springcloud.controller;
 
 import com.allst.springcloud.entities.CommonResult;
 import com.allst.springcloud.entities.Payment;
+import com.allst.springcloud.lb.LoadBalancer;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.ILoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
+import java.net.URI;
+import java.util.List;
 
 /**
  * @author YiYa
@@ -26,6 +31,14 @@ public class OrderController {
 
     @Resource
     private RestTemplate restTemplate;
+    /**
+     * 使用自定义的LB
+     */
+    @Resource
+    private LoadBalancer loadBalancer;
+
+    @Resource
+    private DiscoveryClient discoveryClient;
 
     /**
      * create
@@ -55,5 +68,15 @@ public class OrderController {
         } else {
             return new CommonResult(444, "操作失败");
         }
+    }
+
+    @GetMapping(value = "/consumer/payment/lb")
+    public String getPaymentLB() {
+        List<ServiceInstance> instances = discoveryClient.getInstances("cloud-pay-service");
+        if (instances == null || instances.size() <= 0)
+            return null;
+        ServiceInstance serviceInstance = loadBalancer.instances(instances);
+        URI uri = serviceInstance.getUri();
+        return restTemplate.getForObject(uri + "/payment/lb", String.class);
     }
 }

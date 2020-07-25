@@ -73,4 +73,13 @@ public class PaymentController {
 
         return discoveryClient;
     }
+
+    /**
+     * Load Balance
+     * @return serverPort
+     */
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB() {
+        return serverPort;
+    }
 }
