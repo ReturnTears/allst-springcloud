@@ -18,6 +18,7 @@
     <module>allst-cloud-zkOrder</module>
     <module>allst-cloud-consul</module>
     <module>allst-cloud-consulcstm</module>
+    <module>allst-cloud-feignOrder</module>
   </modules>
   <packaging>pom</packaging>
 

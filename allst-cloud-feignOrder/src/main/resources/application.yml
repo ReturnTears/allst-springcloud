@@ -1,0 +1,9 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: false  # true表示将自己注册进EurekaServer
+    service-url:
+      # defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eurekamaster:7001/eureka/,http://eurekaslave2:7002/eureka/ # eureka集群

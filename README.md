@@ -160,3 +160,27 @@ Ribbon核心组件IRule: 根据特定算法从服务列表中选取一个要访�
         3、MyLB
         4、OrderController
 ```
+
+## OpenFeign服务接口调用
+```text
+概述:
+Feign是一个声明式WebService客户端， 使用Feign能让编写WebService客户端更加简单。
+它的使用方法是定义一个服务接口然后在上面添加注解。Feign也支持可插拔式的编码器和解码器。
+Spring Cloud堆Feign进行了封装，使其支持SpringMVC注解标准和HttpMessageConverters。
+Feign可以与Eureka和Ribbon组合使用以支持负载均衡
+Github Code: https://github.com/spring-cloud/spring-cloud-openfeign
+
+what to do?
+Feign旨在使编写Java Http客户端变得更加容易
+使用Ribbon+RestTemplate时， 利用RestTemplate堆http请求的封装，形成了一套模板化的调用方法。
+但是在实际开发中，由于对服务依赖的调用可能不止一处，往往一个接口会被多处调用，所以通常会针对每个微服务自行封装一些客户端来包装这些依赖服务的调用。
+所以，Feign在此基础上做了进一步封装，由他来帮助我们定义和实现依赖服务接口的定义。
+在Feign的实现下，我们只需要常见一个接口并使用注解的方式来配置它，即可完成对服务提供方的接口绑定，简化了使用Spring Cloud Ribbon时，自动封装服务客户端的开发量
+
+Feign集成Ribbon
+利用Ribbon维护了服务提供者的服务列表信息，并通过轮询实现了客户端的负载均衡。而Ribbon不同的是，通过feign只需要定义服务绑定接口且以声明式的方法，优雅而简单的实现了服务调用。
+Feign集成了Ribbon，自带负载均衡配置项
+
+使用步骤:
+allst-cloud-feignOrder
+```
