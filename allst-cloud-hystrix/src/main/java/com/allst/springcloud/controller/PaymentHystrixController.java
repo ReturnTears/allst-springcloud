@@ -30,4 +30,9 @@ public class PaymentHystrixController {
     public String getPaymentError(@PathVariable("id") Integer id) {
         return paymentHystrixService.paymentError(id) + " - " + serverPort;
     }
+
+    @GetMapping(value = "/payment/hystrix/timeout/{id}")
+    public String getPaymentInfoTimeOut(@PathVariable("id") Integer id) {
+        return paymentHystrixService.paymentInfoTimeOut(id);
+    }
 }

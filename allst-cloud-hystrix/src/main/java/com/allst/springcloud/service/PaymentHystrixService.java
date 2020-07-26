@@ -8,4 +8,6 @@ public interface PaymentHystrixService {
     public String paymentInfo(Integer id);
 
     public String paymentError(Integer id);
+
+    public String paymentInfoTimeOut(Integer id);
 }
