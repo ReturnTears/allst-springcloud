@@ -18,4 +18,6 @@ public interface PaymentHystrixService {
     @GetMapping("/payment/hystrix/error/{id}")
     public String getPaymentError(@PathVariable("id") Integer id);
 
+    @GetMapping("/payment/hystrix/timeout/{id}")
+    public String getPaymentTimeOut(@PathVariable("id") Integer id);
 }

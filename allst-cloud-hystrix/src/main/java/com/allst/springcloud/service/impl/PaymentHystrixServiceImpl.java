@@ -42,6 +42,7 @@ public class PaymentHystrixServiceImpl implements PaymentHystrixService {
     /**
      * 服务降级案例:一旦调用服务方法失败，并抛出错误信息后，会自动调用@HystrixCommand标注好的fallbackMethod属性中指定的方法
      * 注意: 一旦发现调用服务不可用(包括：异常和错误)，就会做服务降级，找到兜底的解决方案fallbackMethod
+     *      我们自己配置过的热部署对Java代码改动重启有效，但对@HystrixCommand内属性的修改建议重启服务。
      * @param id 参数
      * @return 结果
      */
