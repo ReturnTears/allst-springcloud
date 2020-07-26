@@ -11,3 +11,8 @@ eureka:
 ribbon:
   ReadTimeout: 5000
   ConnectTimeout: 5000
+
+# 配置feign日志
+logging:
+  level:
+  com.allst.springcloud.service.PaymentFeignService: debug
