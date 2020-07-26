@@ -20,6 +20,7 @@
     <module>allst-cloud-consulcstm</module>
     <module>allst-cloud-feignOrder</module>
     <module>allst-cloud-hystrix</module>
+    <module>allst-cloud-hystrixcstm</module>
   </modules>
   <packaging>pom</packaging>
 
