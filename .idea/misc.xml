@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/allst-cloud-consul/pom.xml" />
         <option value="$PROJECT_DIR$/allst-cloud-consulcstm/pom.xml" />
         <option value="$PROJECT_DIR$/allst-cloud-feignOrder/pom.xml" />
+        <option value="$PROJECT_DIR$/allst-cloud-hystrix/pom.xml" />
       </list>
     </option>
   </component>

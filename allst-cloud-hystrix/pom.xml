@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>allst-cloud-pay</artifactId>
+    <artifactId>allst-cloud-hystrix</artifactId>
 
     <dependencies>
         <!-- 前面两个依赖项是标配 -->
@@ -21,6 +21,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+        <!--
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -45,6 +46,7 @@
             <version>1.18.12</version>
             <optional>true</optional>
         </dependency>
+        -->
         <!-- devtools-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -62,6 +64,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!--  hystrix -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
     </dependencies>
 </project>

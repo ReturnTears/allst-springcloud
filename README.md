@@ -224,6 +224,7 @@ Hystrix 重要概述:
 服务限流(flowlimit):
     秒杀高并发等操作，一秒N个请求，有序进行
     
+基于allst-cloud-hystrix测试断路器
 
 
 ```
