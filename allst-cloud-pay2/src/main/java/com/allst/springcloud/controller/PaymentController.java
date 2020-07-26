@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author YiYa
  * @since 2020-07-19 下午 11:56
@@ -58,6 +60,20 @@ public class PaymentController {
      */
     @GetMapping(value = "/payment/lb")
     public String getPaymentLB() {
+        return serverPort;
+    }
+
+    /**
+     * 模拟feign超时控制
+     * @return
+     */
+    @GetMapping(value = "/payment/feign/timeout")
+    public String payFeignTimeout() {
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return serverPort;
     }
 }

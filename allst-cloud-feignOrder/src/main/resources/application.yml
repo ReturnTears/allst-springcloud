@@ -7,3 +7,7 @@ eureka:
     service-url:
       # defaultZone: http://localhost:7001/eureka
       defaultZone: http://eurekamaster:7001/eureka/,http://eurekaslave2:7002/eureka/ # eureka集群
+# 开始feign控制超时配置
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
