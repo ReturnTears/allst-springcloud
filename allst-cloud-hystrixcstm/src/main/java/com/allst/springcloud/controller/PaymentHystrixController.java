@@ -1,6 +1,7 @@
 package com.allst.springcloud.controller;
 
 import com.allst.springcloud.service.PaymentHystrixService;
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import javax.annotation.Resource;
  * @since 2020-07-26 下午 01:35
  */
 @RestController
+@DefaultProperties(defaultFallback = "paymentGlobalFallbackMethod") // 全局的服务降级方法
 public class PaymentHystrixController {
 
     @Resource
@@ -25,6 +27,7 @@ public class PaymentHystrixController {
     }
 
     @GetMapping("/consumer/payment/hystrix/error/{id}")
+    @HystrixCommand // 服务降级将调用全局的服务降级方法
     public String paymentError(@PathVariable("id") Integer id) {
         return paymentHystrixService.getPaymentError(id);
     }
@@ -46,10 +49,21 @@ public class PaymentHystrixController {
 
     /**
      * 服务降级调用的方法
+     * 当前服务降级的弊端：
+     *      1、每个业务方法都需要一个降级方法， 导致代码膨胀
+     *      2、业务方法和降级方法在同一个class下， 导致代码耦合度高
      * @param id 参数
      * @return 结果
      */
     public String paymentTimeOutHandler(@PathVariable("id") Integer id) {
         return "消费者端调用服务降级方法: paymentTimeOutHandler - " + id;
+    }
+
+    /**
+     * 定义全局的服务降级方法
+     * @return 结果
+     */
+    public String paymentGlobalFallbackMethod() {
+        return "全局服务降级方法: 该服务繁忙，请稍后重试~";
     }
 }

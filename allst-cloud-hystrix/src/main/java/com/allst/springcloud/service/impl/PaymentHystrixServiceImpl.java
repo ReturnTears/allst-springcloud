@@ -62,6 +62,9 @@ public class PaymentHystrixServiceImpl implements PaymentHystrixService {
 
     /**
      * 服务降级调用的方法
+     * 当前服务降级的弊端：
+     *      1、每个业务方法都需要一个降级方法， 导致代码膨胀
+     *      2、业务方法和降级方法在同一个class下， 导致代码高度耦合
      * @param id 参数
      * @return 结果
      */
