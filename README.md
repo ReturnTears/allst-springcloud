@@ -255,7 +255,7 @@ Hystrix 重要概述:
     主逻辑恢复，如果这次请求依然有问题，断路器继续进入打开状态，休眠时间窗重新计时。
 服务限流(flowlimit):
     秒杀高并发等操作，一秒N个请求，有序进行
-    
+    跳转到Alibaba的sentinel
 基于allst-cloud-hystrix测试断路器
 
 
