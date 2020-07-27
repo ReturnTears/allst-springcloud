@@ -18,6 +18,7 @@
         <option value="$PROJECT_DIR$/allst-cloud-feignOrder/pom.xml" />
         <option value="$PROJECT_DIR$/allst-cloud-hystrix/pom.xml" />
         <option value="$PROJECT_DIR$/allst-cloud-hystrixcstm/pom.xml" />
+        <option value="$PROJECT_DIR$/allst-cloud-hystrixdashboard/pom.xml" />
       </list>
     </option>
   </component>

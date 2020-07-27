@@ -257,6 +257,10 @@ Hystrix 重要概述:
     秒杀高并发等操作，一秒N个请求，有序进行
     跳转到Alibaba的sentinel
 基于allst-cloud-hystrix测试断路器
+Hystrix还提供了准实时的调用监控（Hystrix Dashboard）,Hystrix会持续地记录所有通过Hystrix发起的请求的执行信息。
+并以统计报表和图标的形式展示给用户，包括每秒执行多少请求多少成功，多少失败等， Netflix通过Hystrix-metrics-event-stream项目
+实现了对以上指标的监控。Spring Cloud也提供了Hystrix Dash Board的整合，对监控内容转化成可视化界面。
+
 
 
 ```
