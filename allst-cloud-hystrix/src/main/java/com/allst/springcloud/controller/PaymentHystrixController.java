@@ -1,6 +1,8 @@
 package com.allst.springcloud.controller;
 
 import com.allst.springcloud.service.PaymentHystrixService;
+import com.allst.springcloud.service.impl.PaymentHystrixServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +20,9 @@ public class PaymentHystrixController {
     @Resource
     private PaymentHystrixService paymentHystrixService;
 
+    @Autowired
+    private PaymentHystrixServiceImpl paymentHystrixService2;
+
     @Value("${server.port}")
     private String serverPort;
 
@@ -34,5 +39,10 @@ public class PaymentHystrixController {
     @GetMapping(value = "/payment/hystrix/timeout/{id}")
     public String getPaymentInfoTimeOut(@PathVariable("id") Integer id) {
         return paymentHystrixService.paymentInfoTimeOut(id);
+    }
+
+    @GetMapping(value = "/payment/hystrix/circuit/{id}")
+    public String getPaymentCircuitBreaker(@PathVariable("id") Integer id) {
+        return paymentHystrixService2.paymentCircuitBreakers(id);
     }
 }

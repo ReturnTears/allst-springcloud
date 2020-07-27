@@ -1,9 +1,11 @@
 package com.allst.springcloud.service.impl;
 
+import cn.hutool.core.util.IdUtil;
 import com.allst.springcloud.service.PaymentHystrixService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.concurrent.TimeUnit;
 
@@ -70,5 +72,31 @@ public class PaymentHystrixServiceImpl implements PaymentHystrixService {
      */
     public String paymentInfoTimeOutHandlers(Integer id) {
         return "method : paymentInfoTimeOutHandlers | 系统繁忙，请稍后再试!";
+    }
+
+    /**
+     * 服务熔断
+     * HystrixProperty注解依次解释：
+     * 开启断路器
+     * 请求次数
+     * 时间窗口期
+     * 失败率达到多少后跳闸
+     */
+    @HystrixCommand(fallbackMethod = "paymentCircuitBreakerFallback",commandProperties = {
+            @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),
+            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),
+            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"),
+            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60")
+    })
+    public String paymentCircuitBreakers(@PathVariable("id") Integer id) {
+        if (id < 0) {
+            throw new RuntimeException("---------id can not be minus-------");
+        }
+        String serialNumber = IdUtil.simpleUUID();
+        return Thread.currentThread().getName() + "\t 调用成功，流水号:" + serialNumber;
+    }
+
+    public String paymentCircuitBreakerFallback(@PathVariable("id") Integer id) {
+        return "id isn`t can be minus, please try again a later.-- id : " + id;
     }
 }
