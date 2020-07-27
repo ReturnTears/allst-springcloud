@@ -266,3 +266,38 @@ http://localhost:9001/hystrix
 http://localhost:8001/actuator/hystrix.stream
 
 ```
+
+## 服务网关
+```text
+Zuul
+https://github.com/Netflix/zuul/wiki
+
+Gateway(新一代服务网关)
+https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.2.RELEASE/reference/html
+概述:
+is what?
+cloud全家桶中有个很重要的组件就是网关，在1.x版本中都是采用的Zuul网关
+在2.x中采用的SpringCloud Gateway
+Gateway是在Spring生态系统之上构建的API网关服务，基于Spring 5、Spring Boot 2、和Project Reactor等技术。
+Gateway旨在提供一种简单有效的方式来对API进行路由， 以及提供一些强大的过滤功能，例如：熔断，限流，重试
+SpringCloud Gateway是基于WebFlux实现的，而WebFlux框架底层则是使用了高性能的Reactor通信框架Netty
+SpringCloud Gateway的目标提供统一的路由方式且基于Filter链的方式提供了网关基本功能
+
+what can do?
+反向代理
+鉴权
+流量控制
+熔断
+日志监控
+...
+
+三大核心概念:
+
+Gateway工作流程
+
+入门配置
+
+通过微服务服务名称
+
+
+```
