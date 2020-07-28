@@ -283,6 +283,16 @@ Gateway旨在提供一种简单有效的方式来对API进行路由， 以及提
 SpringCloud Gateway是基于WebFlux实现的，而WebFlux框架底层则是使用了高性能的Reactor通信框架Netty
 SpringCloud Gateway的目标提供统一的路由方式且基于Filter链的方式提供了网关基本功能
 
+SpringCloud Gateway具有以下特性:
+基于Spring Framework 5, Project Reactor和Spring Boot2.0
+动态路由:能够匹配任何请求属性
+可以对路由指定Predicate（断言）和Filter（过滤器）
+集成Hystrix的断路器功能
+集成Spring Cloud服务发现功能
+易于编写的Predicate（断言）和Filter（过滤器）
+请求限流功能
+支持路径重写
+
 what can do?
 反向代理
 鉴权
@@ -292,9 +302,21 @@ what can do?
 ...
 
 三大核心概念:
+路由（路由）:
+    路由是构建网关的基本模块，它由ID，目标URI，一系列的断言和过滤器组成，如果断言为true则匹配该路由
+Predicate（断言）:
+    参考Java8 的java.util.function.Predicate
+    开发中可以匹配Http请求中的所有内容(例如请求头或请求参数)， 如果请求与断言相匹配则进行路由
+Filter（过滤）:
+    值得是Spring框架中SpringCloud Gateway Filter的实例，使用过滤器，可以在请求被路由前或者之后进行修改。
 
 Gateway工作流程
+    客户端向SpringCloud Gateway 发出请求。然后在Gateway Handler Mapping中找到与请求相匹配的路由，将其发送到Gateway Web Handler。
+    Handler在通过指定的过滤器链Filter来将请求发送到我们实际的服务执行业务逻辑，然后返回。
+    过滤器之间用虚线分开是因为过滤器可能会在发送代理之前("pre")或之后"post"执行业务逻辑
+        <pre:可以做参数校验、权限校验、流量监控、日志输出、协议转换|post:响应内容、响应头的修改、日志输出、流量监控>
 
+    
 入门配置
 
 通过微服务服务名称
