@@ -15,6 +15,7 @@
         <module name="allst-cloud-eureka2" />
         <module name="allst-cloud-consulcstm" />
         <module name="allst-cloud-order" />
+        <module name="allst-cloud-gateway" />
         <module name="allst-cloud-zkOrder" />
         <module name="allst-cloud-hystrixdashboard" />
         <module name="allst-cloud-pay2" />

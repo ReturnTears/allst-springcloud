@@ -19,6 +19,7 @@
         <option value="$PROJECT_DIR$/allst-cloud-hystrix/pom.xml" />
         <option value="$PROJECT_DIR$/allst-cloud-hystrixcstm/pom.xml" />
         <option value="$PROJECT_DIR$/allst-cloud-hystrixdashboard/pom.xml" />
+        <option value="$PROJECT_DIR$/allst-cloud-gateway/pom.xml" />
       </list>
     </option>
   </component>

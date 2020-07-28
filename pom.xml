@@ -22,6 +22,7 @@
     <module>allst-cloud-hystrix</module>
     <module>allst-cloud-hystrixcstm</module>
     <module>allst-cloud-hystrixdashboard</module>
+      <module>allst-cloud-gateway</module>
   </modules>
   <packaging>pom</packaging>
 
