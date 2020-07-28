@@ -323,6 +323,18 @@ Gateway也是一个微服务，需要注册进微服务
 通过微服务服务名称实现动态路由
 默认情况下Gateway会根据注册中心注册的服务列表，以注册中心上微服务名为路径常见动态路由转发，从而实现动态路由的功能
 
+Predicate的使用
+predicates:
+    - Path
+    - After
+    - Between
+    - Cookie
+    - Header
+    - Post
+    -
 
+带Cookie的请求
+curl http://localhost:9527/payment/lb --cookie "username=wayo"
+curl http://localhost:9527/payment/lb --cookie "username=wayo" -H "X-Request-Id:1234"
 
 ```
