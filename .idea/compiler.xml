@@ -22,6 +22,7 @@
         <module name="allst-cloud-hystrixcstm" />
         <module name="allst-cloud-pay" />
         <module name="allst-cloud-hystrix" />
+        <module name="allst-cloud-config" />
       </profile>
     </annotationProcessing>
   </component>

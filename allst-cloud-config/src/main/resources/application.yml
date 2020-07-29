@@ -1,0 +1,20 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:ReturnTears/allst-config.git
+          # 搜索目录
+          search-paths:
+            - allst-config
+      # 分支
+      label: master
+# 注册到eureka服务上
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka

@@ -350,3 +350,61 @@ SpringCloud Gateway内置了多种路由过滤器，他们都由GatewayFilter的
 3、
 
 ```
+
+## Spring Cloud Config 服务配置中心
+```text
+分布式面临的问题?
+微服务意味着要将单体应用中的业务拆分分成一个个服务， 每个服务的粒度相对较小， 因此系统中会出现大量的服务。
+都需要必要的配置信息才能运行， 所以需要一套集中式的动态的配置管理设施。
+Spring Cloud 提供了ConfigServer来解决这个问题， 我们每个微服务自己都带着application.yml，上百个配置文件的管理， 很容易混淆、混乱
+is what？
+Spring Cloud  Config为微服务架构中的微服务提供集中式的外部配置支持， 配置服务器为各个不同微服务应用的所有环境提供一个中心化的外部配置。
+
+how to play?
+Spring Cloud Config分为服务端和客户端两部分
+服务端也称为分布式配置中心， 它是一个独立的微服务应用，用来连接配置服务器并为客户端提供获取配置信息，加密解密信息等访问接口
+客户端则是通过指定的配置中心来管理应用资源， 以及与业务相关的配置内容， 并在启动的时候从配置中心获取和加载配置信息，配置服务器默认采用git来存储配置信息。
+这样就有助于对环境配置进行版本管理，并且可以通过git客户端工具来方便管理和访问配置内容。
+
+what can do?
+1、集中管理配置文件
+2、不同环境不同配置、动态化的配置更新、分环境部署比如：dev/test/prod/beta（预发布环境）/release（灰度发布环境）
+3、运行期间动态调整配置，不再需要在每个服务部署的机器上编写配置文件，服务会向配置中心统一拉取配置自己的信息
+4、当配置发生变化时，服务不需要重启即可感知到配置的变化并应用到新的配置
+5、将配置信息以REST接口的形式暴露
+
+与github配置整合
+Spring Cloud Config默认采用git来存储配置文件， 使用http/https访问的形式
+读取自己GitHub上配置文件的内容
+http://localhost:3344/master/config-dev.yml
+
+官网
+cloud.spring.io/spring-cloud-static/spring-cloud-config/2.2.1.RELEASE/reference/html
+
+配置读取规则：
+/{application}/{profile}[/{label}]
+    http://localhost:3344/config/dev/master
+    http://localhost:3344/config/test/master
+    http://localhost:3344/config/prod/master
+/{application}-{profile}.yml
+默认找master分支
+    http://localhost:3344/config-dev.yml
+    http://localhost:3344/config-test.yml
+    http://localhost:3344/config-prod.yml
+/{label}/{application}-{profile}.yml
+  master分支：
+    http://localhost:3344/master/config-dev.yml
+    http://localhost:3344/master/config-test.yml
+    http://localhost:3344/master/config-prod.yml
+  dev分支：
+    http://localhost:3344/dev/config-dev.yml
+    http://localhost:3344/dev/config-test.yml
+    http://localhost:3344/dev/config-prod.yml
+/{application}-{profile}.properties
+/{label}/{application}-{profile}.properties
+
+label:分支
+application:服务名
+profile：环境
+
+```
