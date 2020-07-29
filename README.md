@@ -1,7 +1,7 @@
 # 微服务架构搭建
 ## 环境介绍
 ```text
-Windows10专业版、IDEA2020.1、Maven3.6.3、Git、MySQL8
+Windows10专业版、IDEA2020.1、Maven3.6.3、Git、MySQL8、Java11
 如果IDEA新建Maven项目时报错：请查看我的博客：
 https://blog.csdn.net/sinat_33957978/article/details/107453167
 ```
@@ -407,4 +407,31 @@ label:分支
 application:服务名
 profile：环境
 
+
+Config Client端
+
+application.yml是用户级的资源配置项
+bootstrap.yml是系统级的配置项， 优先级更高
+
+SpringCloud会创建一个“Bootstrap Context”， 作为spring应用的“Application“的父上下文。初始化的时候， ”Bootstrap Context“
+负责从外部源加载配置属性并解析配置。 这两个上下文共享一个外部获取的”Environment“
+"Bootstrap"属性有高优先级，默认情况下， 他们不会被本地配置覆盖。
+”Bootstrap Context“和”Application Context“有着不同的约定，所以新增一个”bootstrap.yml“文件，
+保证”Bootstrap Context“和”Application Context“配置分离
+
+要将Client模块下的application.yml文件改为bootstrap.yml这很关键
+因为bootstrap.yml是比application.yml先加载的。
+
+实现客户端访问Config服务端通过github获取信息
+http://localhost:3355/configInfo
+
+分布式的动态刷新问题
+在GitHub上修改了配置文件信息后，刷新服务端，发现ConfigServer立刻又响应，获取到了更新后的消息，
+但是，客户端没有任何响应，除非重启微服务或者重新加载服务
+
+如何做到动态刷新呢？
+1、暴露监控端点
+2、业务controller类添加注解@RefreshScope
+3、执行 curl -X POST "http://localhost:3355/actuator/refresh"  刷新，相当于激活更新后的信息
+4、再次访问客户端即可访问到最新的更新信息
 ```
