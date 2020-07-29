@@ -337,4 +337,16 @@ predicates:
 curl http://localhost:9527/payment/lb --cookie "username=wayo"
 curl http://localhost:9527/payment/lb --cookie "username=wayo" -H "X-Request-Id:1234"
 
+Filter的使用:
+路由过滤器可用于修改进入的HTTP请求和返回的HTTP响应， 路由过滤器只能指定路由进行使用
+SpringCloud Gateway内置了多种路由过滤器，他们都由GatewayFilter的工厂类来生产
+生命周期: Pre Post
+种类：Gateway Filter Globa lFilter
+
+常用Gateway Filter
+自定义过滤器:
+1、实现两个接口:Global Filter和Ordered
+2、what can do? 全局日志记录、统一网关鉴权
+3、
+
 ```

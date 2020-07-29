@@ -20,8 +20,8 @@ spring:
           predicates:
             - Path=/payment/lb/**
             - After=2020-07-28T23:19:44.383424400+08:00[Asia/Shanghai]  # 表示在该时间之后的请求才能匹配路由规则
-            - Cookie=username,wayo  # 带cookie
-            - Header=-X-Request-Id,\d+  # 请求头要有X-Request-Id属性并且值为整数的正在表达式
+            #- Cookie=username,wayo  # 带cookie
+            #- Header=-X-Request-Id,\d+  # 请求头要有X-Request-Id属性并且值为整数的正在表达式
 eureka:
   instance:
     hostname: gateway-service
