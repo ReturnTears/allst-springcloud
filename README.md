@@ -435,3 +435,8 @@ http://localhost:3355/configInfo
 3、执行 curl -X POST "http://localhost:3355/actuator/refresh"  刷新，相当于激活更新后的信息
 4、再次访问客户端即可访问到最新的更新信息
 ```
+
+## Spring Cloud Bus 消息总线
+```text
+
+```
