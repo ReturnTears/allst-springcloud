@@ -464,21 +464,64 @@ Spring Cloud Bus动态刷新全局广播通知
 1、利用消息总线触发一个客户端/bus/refresh,而刷新所有客户端的配置(由客户端一一去刷新)
 2、利用消息总线触发一个服务端ConfigServer的/bus/refresh端点，而刷新所有客户端的配置（更适合）
 
+```
+
+## Spring Cloud Stream 消息驱动
+```text
+消息驱动解决的痛点:
+ActiveMQ
+RabbitMQ
+RocketMQ
+Kafka
+一个企业中可能存在使用多个MQ的情况，这就让开发中进行对接、维护、切换的难度加大
+这时候就需要一种新的技术来实现，让我不再关注具体的MQ细节，只需要用一种适配绑定的方式，
+就自动给我们进行各种MQ的切换。
+
+消息驱动概述:
+is what?
+屏蔽底层消息中间件的差异，降低切换成本，统一消息的编程模型
+官方网站:
+spring.io/projects/spring-cloud-stream#overview
+
+什么是Spring Cloud Stream？
+官方定义：Spring Cloud Stream是一个构建消息驱动微服务的框架
+应用程序通过inputs或者outputs来与Spring Cloud Stream中binder对象交互。
+通过我们配置来(binding)绑定,而Spring Cloud Stream的binder对象负责与消息中间件交互。
+所以，我们只需要搞清楚如何与Spring Cloud Stream交互既可以方便使用消息驱动
+
+通过使用Spring Integration来链接消息代理中间件以实现消息事件驱动。
+Spring Cloud Stream为一些供应商的消息中间件产品提供了个性化的自动化配置实现，引用了发布-订阅、消费组、分区的三个核心概念。
+目前仅仅支持RabbitMQ和Kafka
+
+Spring Cloud Stream 中文指导手册
+m.wang1314.com/doc/webapp/topic/20971999.html
+
+设计思想:
+标准的MQ： pub --> broker（topic） --> sub
+生产者消费者靠消息媒介传递消息内容 -- message
+消息必须走特定的通道  -- 消息通道 message channel
+消息通道里的消息如何被消费呢，谁负责收发处理 -- 消息通道message channel 的子接口subscription
+
+Spring Cloud Stream:
+                        <Destination Binder>
+Rabbit MQ <--> input binding-- Application --output Binding <--> Kafka
+上述中间件的差异导致我们实际开发中造成一些困扰，如果使用了两个消息队列的其中一个，
+后面的业务需求我想往另一种消息队列进行迁移，这时候无疑是一种灾难性的，一大堆东西都要重新推到重做， 因为它跟我们的系统耦合，
+Spring Cloud Stream 为我们提供了解耦合的方式。
+通过使用绑定器作为中间层，完美地实现了应用程序与消息中间件细节之间的隔离。
+通过向应用程序暴露统一的channel通道， 使得应用程序不需要再考虑各种不同的消息中间件。
+
+Spring Cloud Stream标准流程套路:
+Binder: 连接中间件、屏蔽差异
+Channel: 通道，是队列Queue的一种抽象，在消息通讯系统中就是实现存储和转发的媒介， 通过Channel对队列进行配置
+Source和Sink: 参照对象是Spring Cloud Stream自身， 从Stream发出消息就是输出，接收消息就是输入
 
 
 
+what can do?
 
+where download?
 
-
-
-
-
-
-
-
-
-
-
-
+how to play?
 
 ```
