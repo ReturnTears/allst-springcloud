@@ -525,3 +525,27 @@ where download?
 how to play?
 
 ```
+
+## Spring Cloud Sleuth 分布式请求链路跟踪
+```text
+为什么会出现该技术？
+在微服务框架中， 一个由客户端发起的请求在后端系统中会经过多个不同的服务节点调用协同产生最后的请求结果， 
+每一个前端请求都会形成一条复杂的分布式服务调用链路，链路中的任何一环出现高延时或者错误都会引起整个请求最后的失败。
+
+解决什么问题？
+
+
+Sleuth与Zipkin配合使用：Sleuth负责数据链路收集、Zipkin负责数据展示
+
+官网:
+cloud.spring.io/spring-cloud-sleuth/reference/html/
+
+zipkin下载地址:
+http://dl.bintray.com/openzipkin/maven/io/zipkin/java/zipkin-server/
+java -jar zipkin-server-2.12.9-exec.jar启动zipkin
+http://loclahost:9411/zipkin/
+术语介绍:
+Trace：类似树结构的Span集合，表示一条调用链路，存在唯一标识
+Span:表示调用链路来源，通俗的理解Span就是一次请求信息
+
+```

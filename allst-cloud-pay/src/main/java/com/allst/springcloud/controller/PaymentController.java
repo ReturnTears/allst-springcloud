@@ -86,7 +86,7 @@ public class PaymentController {
 
     /**
      * 模拟feign超时控制
-     * @return
+     * @return 结果
      */
     @GetMapping(value = "/payment/feign/timeout")
     public String payFeignTimeout() {
@@ -96,5 +96,14 @@ public class PaymentController {
             e.printStackTrace();
         }
         return serverPort;
+    }
+
+    /**
+     * 测试zipkin
+     * @return 结果
+     */
+    @GetMapping(value = "/payment/zipkin")
+    public String paymentZipkin() {
+        return "Hi, zhis is zipkin return message!";
     }
 }

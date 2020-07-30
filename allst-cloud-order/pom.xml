@@ -43,10 +43,15 @@
             <artifactId>allst-cloud-common</artifactId>
             <version>${project.version}</version>
         </dependency>
-<!--       eureka client -->
+        <!-- eureka client -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!-- 引入zipkin和sleuth -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
         </dependency>
     </dependencies>
 

@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: cloud-order-server
+  zipkin:
+    base-url: http://loclahost:9411
+    sleuth:
+      sampler:
+        probability: 1  # 采样率值介于0-1之间，1表示全部采集
 eureka:
   client:
     register-with-eureka: true  # true表示将自己注册进EurekaServer
