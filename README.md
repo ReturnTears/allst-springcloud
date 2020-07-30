@@ -438,5 +438,47 @@ http://localhost:3355/configInfo
 
 ## Spring Cloud Bus 消息总线
 ```text
+TODO 后期整合Kafka(基于Centos7虚拟机)
+
+Spring Cloud Bus配合 Spring Cloud Config使用可以实现分布式配置自动刷新
+
+is what? 
+Spring Cloud Bus 是用来将分布式系统的节点与轻量级消息系统连接起来的框架，它整合了Java的事件处理机制和消息中间件的功能。
+Spring Cloud Bus 支持RabbitMQ和Kafka
+
+what can do?
+Spring Cloud Bus 能管理和传播分布式系统间的消息，就像一个分布式执行器，可用于广播状态更改，事件推送等，
+也可以当作微服务间的通讯通道
+
+什么是总线？
+在微服务架构的系统中，通常会使用轻量级的消息代理来构建一个公用的消息主题，并让系统中所有微服务实例都链接上来。
+由于该主题中产生的消息会被所有实例监听和消费，所以称为消息总线。
+在总线上的各个实例，都可以方便地广播一些需要让其他连接在该主题上的实例都知道的消息。
+
+基本原理？
+ConfigClient实例都监听MQ中同一个topic(默认是 Spring Cloud Bus)。
+当一个服务刷新数据的时候，它会把这个消息放入Topic中，这样其他监听同一个topic的服务就能得到通知，然后去更新自身的配置。
+
+Spring Cloud Bus动态刷新全局广播通知
+设计思想:
+1、利用消息总线触发一个客户端/bus/refresh,而刷新所有客户端的配置(由客户端一一去刷新)
+2、利用消息总线触发一个服务端ConfigServer的/bus/refresh端点，而刷新所有客户端的配置（更适合）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```
