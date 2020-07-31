@@ -66,6 +66,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <!-- spring cloud alibaba -->
       <dependency>
         <groupId>com.alibaba.cloud</groupId>
         <artifactId>spring-cloud-alibaba-dependencies</artifactId>

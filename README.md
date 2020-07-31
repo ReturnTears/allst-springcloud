@@ -549,3 +549,32 @@ Trace：类似树结构的Span集合，表示一条调用链路，存在唯一�
 Span:表示调用链路来源，通俗的理解Span就是一次请求信息
 
 ```
+
+## Spring Cloud Alibaba
+```text
+Spring Cloud Alibaba
+官网: https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md
+2018.10.31,Spring Cloud Alibaba正式入驻了Spring Cloud 官方孵化器，并在Maven中央库发布了第一个版本
+
+what can do?
+1、服务降级限流
+    默认支持Servlet、Feign、RestTemplate、Dubbo、Rocket MQ限流降级功能的接入，可以在运行时通过控制台实时修改限流降级规则，
+    还支持查看限流降级Metrics监控
+2、服务注册与发现
+    适配Spring Cloud 服务注册与发现标准，默认集成Ribbon的支持
+3、分布式配置管理
+    支持分布式系统中的外部化配置、配置更改时自动刷新
+4、消息驱动能力
+    基于Spring Cloud Stream为微服务应用构建消息驱动能力
+5、阿里云对象存储
+    阿里云提供的海量、安全、低成本、高可靠的云存储服务。
+    支持在任何应用、任何事件、任何地点存储和访问任意类型的数据
+6、分布式任务调度
+    提供秒级、精准、高可靠、高可用的定时任务调度服务。
+    同时提供分布式的任务执行模型，如网格任务。网格任务支持海量子任务均匀分配到所有Worker(schedulerx-client)上执行。
+
+how to play?
+
+
+
+```
