@@ -573,7 +573,18 @@ what can do?
     提供秒级、精准、高可靠、高可用的定时任务调度服务。
     同时提供分布式的任务执行模型，如网格任务。网格任务支持海量子任务均匀分配到所有Worker(schedulerx-client)上执行。
 
-how to play?
+```
+
+## Spring Cloud Alibaba Nacos 服务注册与配置中心
+**importance**
+```text
+why named nacos ? Naming 和 Configuration 的前两个字母，s为service
+is what?
+    一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台
+    nacos ≈ Eureka + Config + Bus
+
+https://github.com/alibaba/Nacos
+nacos.io/zh-cn/index.html
 
 
 
