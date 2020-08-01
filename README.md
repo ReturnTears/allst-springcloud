@@ -608,6 +608,16 @@ CP模式下则支持注册持久化实例，此时则是Raft协议为集群运�
 curl -X PUT "$NACOS_SERVER:8848/nacos/v1/ns/opertor/switches?entry=serverMode&value=CP"
 
 
+Nacos作为配置中心
+Nacos和SpringCloud Config一样， 在项目启动时， 要保证先从配置中心进行配置拉取，拉取配置之后，才能保证项目的正常启动
+SpringBoot中配置文件的加载是存在优先级顺序的， bootstrap优先级高于application
 
+https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html
+# {spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+Nacos中的dataId的组成格式与SpringBoot配置文件中的匹配规则
 
+启动nacos config报错:
+java.lang.IllegalStateException: failed to req API:/nacos/v1/ns/instance after all servers([localhost:8488]) tried: failed to req API:localhost:8488/nacos/v1/ns/instance. code:500 msg: java.net.ConnectException: Connection refused: connect
+Linux: ./bin/startup.sh -m standalone
+Windows: startup.cmd -m standalone
 ```

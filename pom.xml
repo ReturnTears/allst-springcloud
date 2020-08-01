@@ -28,6 +28,7 @@
     <module>allst-cloud-nacos-provider</module>
     <module>allst-cloud-nacos-consumer</module>
     <module>allst-cloud-nacos-order</module>
+    <module>allst-cloud-nacos-config</module>
   </modules>
   <packaging>pom</packaging>
 
