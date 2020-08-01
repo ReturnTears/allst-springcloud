@@ -596,6 +596,18 @@ username / password 均是nacos
 nacos官网学习文档： https://spring.io/projects/spring-cloud-alibaba
 
 Nacos天生就具备负载均衡的能力,所以创建的模块nacos-provider与nacos-consumer使用的相同的服务名，用以调试负载均衡
+Nacos支持CP和AP的切换
+那么如何选择呢？
+如果不需要存储服务级别的信息且服务实例是通过nacos-client注册， 并能够保持心跳上报，那么就可以选择AP模式。
+当前主流的服务，SpringCloud和Dubbo服务，都适用于AP模式，AP模式为了服务的可能性而减弱了一致性， 因此AP模式下只支持注册临时实例。
+
+如果需要在服务级别编辑或者存储配置信息， 那么CP是必须的， K8S服务和DNS服务则适用于CP模式。
+CP模式下则支持注册持久化实例，此时则是Raft协议为集群运行模式， 该模式下注册实例之前必须先注册服务，
+如果服务不存在，则会报错返回。
+
+curl -X PUT "$NACOS_SERVER:8848/nacos/v1/ns/opertor/switches?entry=serverMode&value=CP"
+
+
 
 
 ```
