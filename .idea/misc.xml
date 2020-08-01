@@ -22,6 +22,7 @@
         <option value="$PROJECT_DIR$/allst-cloud-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/allst-cloud-config/pom.xml" />
         <option value="$PROJECT_DIR$/allst-cloud-configclient/pom.xml" />
+        <option value="$PROJECT_DIR$/allst-cloud-nacos-provider/pom.xml" />
       </list>
     </option>
   </component>

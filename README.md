@@ -593,5 +593,9 @@ bin目录下运行startup.cmd即可, 初次访问时可能会有点慢, 耐心�
 http://localhost:8848/nacos
 username / password 均是nacos
 
+nacos官网学习文档： https://spring.io/projects/spring-cloud-alibaba
+
+Nacos天生就具备负载均衡的能力,所以创建的模块nacos-provider与nacos-consumer使用的相同的服务名，用以调试负载均衡
+
 
 ```

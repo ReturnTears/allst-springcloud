@@ -1,0 +1,12 @@
+server:
+  port: 83
+spring:
+  application:
+    name: cloud-nacos-order-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # 注册进nacos
+# 消费组将要去访问的微服务名称(注册进nacos的微服务提供者)
+service-url:
+  nacos-user-service: http://cloud-nacos-provider-server

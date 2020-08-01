@@ -25,6 +25,9 @@
     <module>allst-cloud-gateway</module>
     <module>allst-cloud-config</module>
     <module>allst-cloud-configclient</module>
+    <module>allst-cloud-nacos-provider</module>
+    <module>allst-cloud-nacos-consumer</module>
+    <module>allst-cloud-nacos-order</module>
   </modules>
   <packaging>pom</packaging>
 

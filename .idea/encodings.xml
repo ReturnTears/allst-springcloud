@@ -25,6 +25,12 @@
     <file url="file://$PROJECT_DIR$/allst-cloud-hystrixcstm/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/allst-cloud-hystrixdashboard/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/allst-cloud-hystrixdashboard/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/allst-cloud-nacos-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/allst-cloud-nacos-consumer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/allst-cloud-nacos-order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/allst-cloud-nacos-order/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/allst-cloud-nacos-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/allst-cloud-nacos-provider/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/allst-cloud-order/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/allst-cloud-order/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/allst-cloud-pay/src/main/java" charset="UTF-8" />
