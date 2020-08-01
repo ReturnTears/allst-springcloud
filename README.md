@@ -586,6 +586,12 @@ is what?
 https://github.com/alibaba/Nacos
 nacos.io/zh-cn/index.html
 
+Nacos的安装
+在官网下载对应版本的Nacos,解压到自己指定的目录即可，
+我的版本是:nacos-server-1.3.1.zip
+bin目录下运行startup.cmd即可, 初次访问时可能会有点慢, 耐心等待以下即可,启动成功后访问 
+http://localhost:8848/nacos
+username / password 均是nacos
 
 
 ```
