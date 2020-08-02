@@ -618,6 +618,26 @@ Nacos中的dataId的组成格式与SpringBoot配置文件中的匹配规则
 
 启动nacos config报错:
 java.lang.IllegalStateException: failed to req API:/nacos/v1/ns/instance after all servers([localhost:8488]) tried: failed to req API:localhost:8488/nacos/v1/ns/instance. code:500 msg: java.net.ConnectException: Connection refused: connect
-Linux: ./bin/startup.sh -m standalone
-Windows: startup.cmd -m standalone
+我这里的坑根据官方配置解决了:
+https://github.com/alibaba/spring-cloud-alibaba/blob/master/spring-cloud-alibaba-examples/nacos-example/nacos-config-example/readme.md
+
+#Linux: ./bin/startup.sh -m standalone
+#Windows: startup.cmd -m standalone
+
+Nacos作为分类配置:
+适用多环境，多项目管理
+命名空间的设计思想:
+    namespace + group + data id
+    namespace用于区分部署环境
+    group + data id逻辑区分两个目标对象
+从图形化管理界面可知:
+    默认情况下: namespace=public, group=DEFAULT_GROUP, 默认Cluster是DEFAULT
+
+nacos的默认命名空间是public, namespace主要用来实现隔离。
+比如我们现在有三个环境: 开发、测试、生产， 我们就可以创建三个namespace、不同namespace之间是隔离的
+group默认是DEFAULT_GROUP， group可以把不同的微服务划分到同一个分组中
+
+指定spring.profiles.active和配置文件的data id来使不同环境下读取不同的配置
+默认空间+默认分组+新建dev和test两个data id
+
 ```
