@@ -640,4 +640,7 @@ group默认是DEFAULT_GROUP， group可以把不同的微服务划分到同一�
 指定spring.profiles.active和配置文件的data id来使不同环境下读取不同的配置
 默认空间+默认分组+新建dev和test两个data id
 
+
+Nacos集群与持久化配置(重点)
+
 ```
