@@ -4,6 +4,8 @@ eureka:
   instance:
     appname: eurekamaster  # eureka服务端的示例名称
   client:
+    healthcheck:
+      enabled: true # 开启健康检查
     register-with-eureka: false # false表示不向注册中心注册自己
     fetch-registry: false # false表示自己端就是注册中心，我的职责是维护服务实例，并不需要去检索服务
     service-url:  # 设置与eureka server交互的地址查询服务和注册服务都需要依赖这个地址
@@ -12,3 +14,8 @@ eureka:
   server:
     enable-self-preservation: true # 默认是true,表示打开， false表示关闭
     eviction-interval-timer-in-ms: 10000  # unit s
+spring:
+  security:
+    user:
+      name: admin
+      password: 123456
